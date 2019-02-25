@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>Základní příkazy Gitu</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header class="jumbotron bg-info text-white text-center">
+        <h1>Základní příkazy Gitu</h1>
+    </header>
+
+    <main class="container">
+        <h2>Vytvoření a konfigurace lokálního repozitáře</h2>
+        <p><code>git init</code></p>
+        <p>Vytvoření lokálního repozitáře</p>
+        <p><code>git --version</code></p>
+        <p>Vypíše verzi Gitu</p>
+        <p><code>git config --global http.proxy http://192.168.1.1:800</code></p>
+        <p>Nastaví přístup konzolové aplikace přes proxy server (globálně, tj. pro všechny repozitáře vytvořené na daném počítači).</p>
+        <p><code>git config --global http.sslverify "false"</code></p>
+        <p>Tímto příkazem je možné pro daný počítač zrušit zabezpečnou komunikaci prostřednictvím https (SSL vrstvy), která vyžaduje přítomnost SSL certifikátu. Toto řešení lze použít např. pro případy, kdy na školních počítačích pracuje střídavě více žáků a nepoužívají vlastní uživatelský profil s uloženým certifikátem.</p>
+        <p><code>git config --local user.user "slipkova"</code></p>
+        <p><code>git config --local user.email "neco@sspu-opava.cz"</code></p>
+        <p>Nastaví uživatelský účet pro použití v lokálním repozitáři (vhodné pro školní počítače).</p>
+        <p><code>git config --global user.user "slipkova"</code></p>
+        <p><code>git config --global user.email "neco@sspu-opava.cz"</code></p>
+        <p>Nastaví uživatelský účet pro použití v celém počítači (vhodné pro domácí počítače).</p>
+
+        <h2>Práce s lokálním repozitářem</h2>
+        <p><code>git status</code></p>
+        <p>Zjištění aktuálního stavu repozitáře - červeně zobrazeny změněné soubory, které nejsou součástí staging area, zeleně soubory ve staging area připravené na commit.</p>
+        <p><code>git add -all</code></p>
+        <p><code>git add .</code></p>
+        <p>Do staging area budou umístěny všechny soubory.</p>
+        <p><code>git add README.md</code></p>
+        <p>Do staging area bude umístěn soubor README.md.</p>
+        <p><code>git add *.jpg, *.png</code></p>
+        <p>Do staging area budou umístěny soubory (obrázky) s příponou jpg a png.</p>
+        <p><code>git reset</code></p>
+        <p>Ze staging area budou uvolněny všechny umístěné soubory.</p>
+        <p><code>git reset *.jpg</code></p>
+        <p>Ze staging area budou uvolněny soubory jpg.</p>
+
+        <h2>Synchronizace lokálního a vzdáleného repozitáře</h2>
+        <p><code>git remote add origin https://github.com/slipkova/novy.git</code></p>
+        <p>Připojí vzdálený repozitář pod názvem origin (obvykle zadané pojmenování), aby mohl být synchronizován s
+            lokálním repozitářem.</p>
+        <p><code>git push -u origin master</code></p>
+        <p>Aktualizuje stav vzdáleného repozitáře (origin) podle lokálního repozitáře (master - základní, hlavní
+            větev repozitáře).</p>
+        <p><code>git push -f origin master</code></p>
+        <p>Podoba příkazu, který se používá pro fixaci chyb při aktualizaci.</p>
+        <p><code>git pull origin master</code></p>
+        <p>Aktualizuje stav lokálního repozitáře podle vzdáleného repozitáře.</p>
+        <p><code>git log</code></p>
+        <p>Vypíše přehled jednotlivých commitů.</p>
+        <p><code>git log --oneline</code></p>
+        <p>Vypíše zkrácený, jednořádkový přehled commitů.</p>
+        <p><code>git clone https://github.com/slipkova/novy.git</code></p>
+        <p>Vytvoření klonu vzdáleného repozitáře na lokálním počítači.</p>
+    </main>
+
+    <footer>
+        <hr>
+        <p class="text-center">&copy; 2019, Eliška Slípková</p>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
